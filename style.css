@@ -1,0 +1,35 @@
+
+
+body {
+
+  background: url(images/out.jpeg) no-repeat center center fixed; 
+  background-size: cover;
+
+  color: #FFA5D2;
+
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px grey;
+}
+
+.card {
+  display: inline-block;
+  background-color: white;
+  width: 38%;
+  height: 200px;
+  border: 1px dotted black;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.picture {
+  background-color: #FFA5D2;
+}
