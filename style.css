@@ -20,7 +20,9 @@ h1 {
   text-shadow: 1px 1px grey;
 }
 
-.card {
+/*
+
+#game {
   display: inline-block;
   background-color: white;
   width: 38%;
@@ -28,8 +30,27 @@ h1 {
   border: 1px dotted black;
   margin-left: 5%;
   margin-right: 5%;
+  cursor: pointer;
 }
 
-.picture {
-  background-color: #FFA5D2;
+*/
+
+#game div {
+
+  float: left;
+  width: 20%;
+  height: 200px;
+  background-color: yellow;
+  margin-right: 2%;
+  color: blue;
+  font-size: 2em;
 }
+
+#game div.flipped {
+  background-color: green;
+}
+
+#game div.pair {
+  /* disable click */
+}
+
