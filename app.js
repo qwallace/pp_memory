@@ -45,15 +45,28 @@ window.onload = function(){
       $(event.target).html(content);
       $(event.target).addClass('flipped');
     }
+    
+    if ( $('.flipped').length === 2 && $('.flipped')[0] === $('.flipped')[1] ) { // **** issue here ****
+
+      console.log("It's a pair");
+      $('.flipped').addClass('pair');
+
+    } else if ( $('.flipped').length === 2 && $('.flipped')[0] !== $('.flipped')[1] ) {
       
-    if ( $('.flipped').length === 2 && $('.flipped')[0] !== $('.flipped')[1] ) {
       console.log('Timer starting');
       window.setTimeout(flipCards, delayMs);
       console.log('Timer finished');
-    } else if ( $('.flipped').length === 2 && $('.flipped')[0] === $('.flipped')[1] ) {
-      console.log("It's a pair");
-      $('.flipped').addClass('pair');
+
+    } else {
+      
+      console.log("Something else is happening");
+
     }
+
+
+    // if ( $('.flipped').length === 2 && $('.flipped')[0] !== $('.flipped')[1] ) { // this is where it's breaking down
+    // } else if ( $('.flipped').length === 2 && $('.flipped')[0].html() === $('.flipped')[1].html() ) {
+    // }
 
   });
 
