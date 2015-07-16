@@ -72,6 +72,19 @@ window.onload = function(){
     $('#player-two-score').html(players[1].score);
   }
 
+  var whoWins = function() {
+    if ($('.pair').length === cards.length) {
+      if (players[0].score > players[1].score) {
+        $('#winner-text').html(players[0].name + " wins!");
+      } else if (players[0].score < players[1].score) {
+        $('#winner-text').html(players[1].name + " wins!");
+      } else {
+        $('#winner-text').html("It's a draw! Hit reset to play again.");
+      }
+    }
+
+  }
+
   // Calls setGame function when button clicked
 
   $('#start-button').on('click', function(){
@@ -125,9 +138,10 @@ window.onload = function(){
     } else {
       
       console.log("Something else is happening");
-      // Who wins function?
 
     }
+
+    whoWins();
 
   });
 

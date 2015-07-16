@@ -18,6 +18,17 @@ body {
 h1 {
   text-align: center;
   text-shadow: 1px 1px grey;
+  border: 1px dashed black;
+}
+
+h2 {
+  text-shadow: 1px 1px grey;
+  border: 1px dashed black;
+}
+
+p {
+  text-shadow: 1px 1px grey;
+  border: 1px dashed black;
 }
 
 /*
@@ -34,6 +45,14 @@ h1 {
 }
 
 */
+
+div {
+  border: 1px dashed black;
+}
+
+#game {
+  border: 1px dashed black;
+}
 
 #game div {
 
@@ -56,6 +75,5 @@ h1 {
 
 .active {
   color: white;
-  text-shadow: 1px 1px grey;
 }
 
