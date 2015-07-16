@@ -68,8 +68,8 @@ window.onload = function(){
 
   var updateScore = function() {
     console.log("Updating score now");
-    $('.player-one-score').html(players[0].score);
-    $('.player-two-score').html(players[1].score);
+    $('#player-one-score').html(players[0].score);
+    $('#player-two-score').html(players[1].score);
   }
 
   // Calls setGame function when button clicked
@@ -125,6 +125,7 @@ window.onload = function(){
     } else {
       
       console.log("Something else is happening");
+      // Who wins function?
 
     }
 
@@ -143,6 +144,7 @@ window.onload = function(){
     $('#player-one-score').addClass('active');
     players[0].score = 0;
     players[1].score = 0;
+    updateScore();
     setGame();
   });
 
