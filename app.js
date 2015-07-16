@@ -21,9 +21,12 @@ window.onload = function(){
 
     console.log('It should be flipping cards...');
 
-    $('.flipped').html('');
 
-    $('.flipped').removeClass('flipped');
+    $('.flipped').not('.pair').html('').removeClass('flipped');
+
+    // $('.flipped').html('');
+
+    // $('.flipped').removeClass('flipped');
 
     
   }
@@ -33,7 +36,11 @@ window.onload = function(){
     console.log("It's clicking")
 
 
-    if ($('.flipped').length === 2) {
+   // if ($('.flipped').length === 2) {
+   //  return;
+   // }
+
+    if ($(event.target).hasClass("pair")) {
       return;
     }
 
@@ -45,14 +52,17 @@ window.onload = function(){
       $(event.target).html(content);
       $(event.target).addClass('flipped');
     }
+
+    // debugger;
     
-    if ( $('.flipped').length === 2 && $('.flipped')[0] === $('.flipped')[1] ) { // **** issue here ****
+    if ( $('.flipped').not('.pair').length === 2 && $('.flipped').not('.pair')[0].innerHTML === $('.flipped').not('.pair')[1].innerHTML ) {
 
       console.log("It's a pair");
       $('.flipped').addClass('pair');
 
-    } else if ( $('.flipped').length === 2 && $('.flipped')[0] !== $('.flipped')[1] ) {
-      
+    } else if ( $('.flipped').not('.pair').length === 2 && $('.flipped').not('.pair')[0].innerHTML !== $('.flipped').not('.pair')[1].innerHTML ) {
+      // debugger;
+      console.log("It's NOT a pair");
       console.log('Timer starting');
       window.setTimeout(flipCards, delayMs);
       console.log('Timer finished');
