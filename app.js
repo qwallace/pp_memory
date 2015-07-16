@@ -4,18 +4,28 @@ window.onload = function(){
 
 // pink, green, blue, yellow
 
-  var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra"];
-
-  var pair = [];
+  var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra", "pedro-pony", "pedro-pony", "susie-sheep", "susie-sheep"];
 
   var delayMs = 1000;
 
-  var chances = 2;
+  var setGame = function() {
 
-  //_.each(cards, function(element, index) {
-    // var newCard = $("div").addClass(card);
-    // $('#game').append(newCard);
-  // });
+    console.log("This is the setGame function");
+
+    if ($('#game div').length > 0) {
+      console.log("Game already set");
+      return;
+    } else {
+      var shuffledCards = _.shuffle(cards);
+      _.each(shuffledCards, function(element) {
+        var newCard = '<div class=' + element + '></div>';
+        $('#game').append(newCard);
+      })
+    }
+
+  };
+
+  // Flips cards back is not the same
 
   var flipCards = function() {
 
@@ -30,6 +40,17 @@ window.onload = function(){
 
     
   }
+
+  // Calls setGame function when button clicked
+
+  // $('#start-game').on('click', function(){
+  //    console.log("We're starting!")
+  //    setGame();
+  // });
+
+  setGame();
+
+  // Main game functionality when div clicked
 
   $('#game div').on("click", function() {
 
@@ -60,7 +81,7 @@ window.onload = function(){
       console.log("It's a pair");
       $('.flipped').addClass('pair');
 
-    } else if ( $('.flipped').not('.pair').length === 2 && $('.flipped').not('.pair')[0].innerHTML !== $('.flipped').not('.pair')[1].innerHTML ) {
+    } else if ( $('.flipped').not('.pair').length === 2 /* && $('.flipped').not('.pair')[0].innerHTML !== $('.flipped').not('.pair')[1].innerHTML */ ) {
       // debugger;
       console.log("It's NOT a pair");
       console.log('Timer starting');
@@ -72,11 +93,6 @@ window.onload = function(){
       console.log("Something else is happening");
 
     }
-
-
-    // if ( $('.flipped').length === 2 && $('.flipped')[0] !== $('.flipped')[1] ) { // this is where it's breaking down
-    // } else if ( $('.flipped').length === 2 && $('.flipped')[0].html() === $('.flipped')[1].html() ) {
-    // }
 
   });
 
