@@ -6,6 +6,8 @@ window.onload = function() {
 
   var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra", "pedro-pony", "pedro-pony", "susie-sheep", "susie-sheep"];
 
+  var players = [ {name: "Player 1", score: 0}, {name: "Player 2", score: 0} ];
+
   var setGame = function() {
     console.log("This is the setGame function");
 
@@ -38,7 +40,7 @@ window.onload = function() {
   setGame();
 
 
-
+  console.log(players[0].score);
 
 };
 

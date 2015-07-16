@@ -1,12 +1,15 @@
 console.log("We're playing Peppa Pig Memory");
 
 window.onload = function(){
-
-// pink, green, blue, yellow
+  
 
   var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra", "pedro-pony", "pedro-pony", "susie-sheep", "susie-sheep"];
 
   var delayMs = 1000;
+
+  var players = [ {name: "Player 1", score: 0}, {name: "Player 2", score: 0} ];
+
+  var turn = players[0];
 
   var setGame = function() {
 
@@ -39,6 +42,34 @@ window.onload = function(){
     // $('.flipped').removeClass('flipped');
 
     
+  }
+
+  // Chages the each player's turn and sets the active class for player name and score
+
+  var changeTurn = function() {
+
+    if (turn === players[0]) {
+      turn = players[1];
+      $('#player-one').removeClass('active');
+      $('#player-two').addClass('active');
+      $('#player-one-score').removeClass('active');
+      $('#player-two-score').addClass('active');
+    } else {
+      turn = players[0];
+      $('#player-two').removeClass('active');
+      $('#player-one').addClass('active');
+      $('#player-two-score').removeClass('active');
+      $('#player-one-score').addClass('active');
+    }
+
+    console.log("It's " + turn.name + "'s turn.");
+
+  }
+
+  var updateScore = function() {
+    console.log("Updating score now");
+    $('.player-one-score').html(players[0].score);
+    $('.player-two-score').html(players[1].score);
   }
 
   // Calls setGame function when button clicked
@@ -79,6 +110,9 @@ window.onload = function(){
 
       console.log("It's a pair");
       $('.flipped').addClass('pair');
+      turn.score++;
+      updateScore();
+      changeTurn();
 
     } else if ( $('.flipped').not('.pair').length === 2 /* && $('.flipped').not('.pair')[0].innerHTML !== $('.flipped').not('.pair')[1].innerHTML */ ) {
       // debugger;
@@ -86,6 +120,7 @@ window.onload = function(){
       console.log('Timer starting');
       window.setTimeout(flipCards, delayMs);
       console.log('Timer finished');
+      changeTurn();
 
     } else {
       
@@ -95,10 +130,19 @@ window.onload = function(){
 
   });
 
+  // Resets the game
+
   $('#reset-button').on('click', function() {
     console.log("We're resetting!");
     $('#game').empty();
     // debugger;
+    turn = players[0];
+    $('#player-two').removeClass('active');
+    $('#player-two-score').removeClass('active');
+    $('#player-one').addClass('active');
+    $('#player-one-score').addClass('active');
+    players[0].score = 0;
+    players[1].score = 0;
     setGame();
   });
 

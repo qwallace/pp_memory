@@ -40,17 +40,22 @@ h1 {
   float: left;
   width: 20%;
   height: 200px;
-  background-color: yellow;
+  background-color: #FFA5D2;
   margin-right: 2%;
   color: blue;
   font-size: 2em;
 }
 
 #game div.flipped {
-  background-color: green;
+  background-color: white;
 }
 
 #game div.pair {
   /* disable click */
+}
+
+.active {
+  color: white;
+  text-shadow: 1px 1px grey;
 }
 
