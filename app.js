@@ -43,25 +43,24 @@ window.onload = function(){
 
   // Calls setGame function when button clicked
 
-  // $('#start-game').on('click', function(){
-  //    console.log("We're starting!")
-  //    setGame();
-  // });
+  $('#start-button').on('click', function(){
+     console.log("We're starting!")
+     setGame();
+  });
 
-  setGame();
 
   // Main game functionality when div clicked
 
-  $('#game div').on("click", function() {
+  $('#game').on("click", 'div', function() {
 
     console.log("It's clicking")
 
 
-   // if ($('.flipped').length === 2) {
-   //  return;
-   // }
+    //if ($('.flipped').not('.pair').length === 2) {
+     //return;
+    //}
 
-    if ($(event.target).hasClass("pair")) {
+    if ($('.flipped').not('.pair').length === 2 || $(event.target).hasClass("pair")) {
       return;
     }
 
@@ -94,6 +93,13 @@ window.onload = function(){
 
     }
 
+  });
+
+  $('#reset-button').on('click', function() {
+    console.log("We're resetting!");
+    $('#game').empty();
+    // debugger;
+    setGame();
   });
 
 

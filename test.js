@@ -28,10 +28,14 @@ window.onload = function() {
 
   // To start game using button
       
-   $('#start-game').on('click', function(){
-     console.log("We're starting!")
-     setGame();
-   });
+  $('#reset').on('click', function(){
+    console.log("We're resetting!")
+    $('#game').empty();
+    debugger;
+    setGame();
+  });
+
+  setGame();
 
 
 
