@@ -1,4 +1,23 @@
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
 
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
 
 body {
 
@@ -13,22 +32,21 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 0;
+  border: 1px solid black;
+}
+
+header {
+
 }
 
 h1 {
   text-align: center;
   text-shadow: 1px 1px grey;
-  border: 1px dashed black;
-}
-
-h2 {
-  text-shadow: 1px 1px grey;
-  border: 1px dashed black;
 }
 
 p {
   text-shadow: 1px 1px grey;
-  border: 1px dashed black;
+  font-size: 1.2em;
 }
 
 /*
@@ -46,23 +64,70 @@ p {
 
 */
 
-div {
-  border: 1px dashed black;
+button {
+  background: #ffa5d2;
+  color: white;
+  height: 50px;
+  width: 20%;
+  border-radius: 10px;
+  margin: 0 9% 0 25%;
+  font-size: 1.05em;
+  border: 2px solid white;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 1px grey;
+  
+}
+
+/*
+
+button {
+  background: #ffa5d2;
+  background-image: -webkit-linear-gradient(top, #ffa5d2, #ffa5d2);
+  background-image: -moz-linear-gradient(top, #ffa5d2, #ffa5d2);
+  background-image: -ms-linear-gradient(top, #ffa5d2, #ffa5d2);
+  background-image: -o-linear-gradient(top, #ffa5d2, #ffa5d2);
+  background-image: linear-gradient(to bottom, #ffa5d2, #ffa5d2);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+*/
+
+button:hover {
+  background: #e00074;
+  text-decoration: none;
+}
+
+#reset-button {
+  margin-left: 0;
+  margin-right: 25%;
 }
 
 #game {
   border: 1px dashed black;
+  padding: 30px 5%;
+  padding-left: 0;
 }
 
 #game div {
-
-  float: left;
+  display: inline-block;
   width: 20%;
   height: 200px;
-  background-color: #FFA5D2;
+  background-color: white;
+  border-radius: 5%;
   margin-right: 2%;
   color: blue;
   font-size: 2em;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-left: 5%;
 }
 
 #game div.flipped {
@@ -75,5 +140,71 @@ div {
 
 .active {
   color: white;
+}
+
+#winner-div {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+#players-div {
+  font-size: 1.1em;
+  padding: 0;
+}
+
+#player-one-div {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  margin: 10px 39.5% 10px 5%;
+  padding: 0;
+  
+}
+
+#player-one-div p {
+  display: inline-block;
+}
+
+#player-one {
+  width: 35%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#player-one-score {
+  width: 20%;
+  margin-left: 0;
+  margin-right: 20%;
+}
+
+#player-two-div {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  margin-left: 0%;
+  margin-right: 5%;
+  padding: 0;
+  
+}
+
+#player-two-div p {
+  display: inline-block;
+}
+
+#player-two {
+  width: 35%;
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+#player-two-score {
+  width: 20%;
+  margin-left: 0;
+  margin-right: 10;
+}
+
+.buttons {
+  margin: 20px 0;
+
 }
 

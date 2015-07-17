@@ -12,24 +12,36 @@
 <body>
 
   <div class="container">
-    
-    <h1>Peppa Pig Memory</h1>
 
-    <p id="winner-text"></p>
+    <header>
+      
+      <h1>Peppa Pig Memory</h1>
 
-    <h2 id="player-one" class="active">Player 1:</h2>
-    <p id="player-one-score" class="active">0</p>
+      <div id="winner-div">
+        <p id="winner-text">Let's play!</p>
+      </div>
 
-    <h2 id="player-two">Player 2:</h2>
-    <p id="player-two-score">0</p>
+      <div class="buttons">
+        <button id="start-button">Start game</button>
+        <button id="reset-button">Reset</button>
+      </div>
 
+      <div id="players-div">
+        <div id="player-one-div">
+          <p id="player-one" class="active">Player 1:</p>
+          <p id="player-one-score" class="active">0</p>
+        </div>
+        <div id="player-two-div">
+          <p id="player-two">Player 2:</p>
+          <p id="player-two-score">0</p>
+        </div>
+      </div>
+
+    </header>
+        
     <div id="game">
-
+      <!-- This is where the cards go -->
     </div>
-
-    <button id="start-button">Start game</button>
-
-    <button id="reset-button">Reset</button>
     
   </div>
   
