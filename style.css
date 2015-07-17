@@ -19,11 +19,17 @@
   clear: both;
 }
 
+@font-face {
+  font-family: PeppaPig;
+  src: local('Peppa Pig Medium'),
+  url(peppa-pig-font.ttf);
+}
+
 body {
 
   background: url(images/out.jpeg) no-repeat center center fixed; 
   background-size: cover;
-
+  font-family: "PeppaPig", sans-serif;
   color: #FFA5D2;
 
 }
@@ -32,7 +38,6 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 0;
-  border: 1px solid black;
 }
 
 header {
@@ -42,6 +47,7 @@ header {
 h1 {
   text-align: center;
   text-shadow: 1px 1px grey;
+  font-size: 2.5em;
 }
 
 p {
@@ -111,7 +117,6 @@ button:hover {
 }
 
 #game {
-  border: 1px dashed black;
   padding: 30px 5%;
   padding-left: 0;
 }
@@ -119,23 +124,21 @@ button:hover {
 #game div {
   display: inline-block;
   width: 20%;
-  height: 200px;
+  height: 250px;
   background-color: white;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-right: 2%;
   color: blue;
   font-size: 2em;
   margin: auto;
   margin-bottom: 20px;
   margin-left: 5%;
+  cursor: pointer;
 }
 
-#game div.flipped {
-  background-color: white;
-}
-
-#game div.pair {
-  /* disable click */
+#game div img {
+  width: 100%;
+  height: 250px;
 }
 
 .active {
@@ -148,7 +151,7 @@ button:hover {
 }
 
 #players-div {
-  font-size: 1.1em;
+  font-size: 1.05em;
   padding: 0;
 }
 

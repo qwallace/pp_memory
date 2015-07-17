@@ -3,7 +3,7 @@ console.log("We're playing Peppa Pig Memory");
 window.onload = function(){
   
 
-  var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra", "pedro-pony", "pedro-pony", "susie-sheep", "susie-sheep"];
+  var cards = ["danny-dog", "danny-dog", "zoe-zebra", "zoe-zebra", "susie-sheep", "susie-sheep", "emily-elephant", "emily-elephant", "peppa-pig", "peppa-pig", "richard-rabbit", "richard-rabbit", "candy-cat", "candy-cat", "ducky", "ducky" ];
 
   var delayMs = 1000;
 
@@ -21,7 +21,7 @@ window.onload = function(){
     } else {
       var shuffledCards = _.shuffle(cards);
       _.each(shuffledCards, function(element) {
-        var newCard = '<div class=' + element + '></div>';
+        var newCard = '<div class="' + element + '"></div>';
         $('#game').append(newCard);
       })
     }
@@ -112,8 +112,10 @@ window.onload = function(){
       $(event.target).removeClass("flipped");
       $(event.target).html('');
     } else {
-      var content = $(event.target).attr('class');
-      $(event.target).html(content);
+      // ******** Messed with it here **********
+      var content = $(event.target).attr('class')
+      var image = '<img src="images/' + content + '.png">';
+      $(event.target).html(image);
       $(event.target).addClass('flipped');
     }
 
