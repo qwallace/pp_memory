@@ -143,11 +143,14 @@ button:hover {
 
 .active {
   color: white;
+  background-color: rgba(253, 253, 150, 0.8);
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 #winner-div {
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 #players-div {
@@ -209,5 +212,38 @@ button:hover {
 .buttons {
   margin: 20px 0;
 
+}
+
+button:focus {outline:0;}
+
+@media (max-width: 500px) {
+
+      .buttons button {
+        /* border: 1px dashed black; */
+        display: block;
+        margin: 0 auto;
+      }
+
+      #players-div p {
+        display: block;
+        margin-left: 5%;
+        margin-right: 0;
+      }
+
+      #player-one-div {
+        width: 100%;
+        /* border: 1px dashed black; */
+        margin: 0 auto;
+      }
+
+      #player-two-div {
+        width: 100%;
+        /* border: 1px dashed black; */
+        margin: 0 auto;
+      }
+
+      #game div {
+        width: 40%;
+      }
 }
 

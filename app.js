@@ -50,16 +50,12 @@ window.onload = function(){
 
     if (turn === players[0]) {
       turn = players[1];
-      $('#player-one').removeClass('active');
-      $('#player-two').addClass('active');
-      $('#player-one-score').removeClass('active');
-      $('#player-two-score').addClass('active');
+      $('#player-one-div').removeClass('active');
+      $('#player-two-div').addClass('active');
     } else {
       turn = players[0];
-      $('#player-two').removeClass('active');
-      $('#player-one').addClass('active');
-      $('#player-two-score').removeClass('active');
-      $('#player-one-score').addClass('active');
+      $('#player-two-div').removeClass('active');
+      $('#player-one-div').addClass('active');
     }
 
     console.log("It's " + turn.name + "'s turn.");
@@ -154,12 +150,11 @@ window.onload = function(){
     $('#game').empty();
     // debugger;
     turn = players[0];
-    $('#player-two').removeClass('active');
-    $('#player-two-score').removeClass('active');
-    $('#player-one').addClass('active');
-    $('#player-one-score').addClass('active');
+    $('#player-two-div').removeClass('active');
+    $('#player-one-div').addClass('active');
     players[0].score = 0;
     players[1].score = 0;
+    $('#winner-text').html("Let's play!");
     updateScore();
     setGame();
   });
